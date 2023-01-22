@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title%}{{profile.username}}{% endblock %}
+{% block content %}
+{% load thumbnail %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+
+<div class="profile-block">
+    <div class="left-block">
+        <div class="profile-img-block">
+            <h1>Здесь будет ава</h1>
+        </div>
+        {% if profile.username == request.user.username %}
+        <button class="btn btn-light" href="">Редактировать</button>
+        {% else %}
+            {% if follow %}
+                <a class="btn btn-secondary" 
+                href="{% url 'profile_unfollow' profile.username %}" role="button"> Отписаться </a>
+            {% else %}
+                <a class="btn btn-success" 
+                href="{% url 'profile_follow' profile.username %}" role="button">Подписаться</a>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="profile-inf-block">
+        <div class="text-block">
+            <h1>{{profile.username}}</h1>
+            <p><strong>Описние профиля</strong></p>
+        </div>
+        <div class="footer-block">
+            <hr>
+            <div class="followers-block">
+                <h2><strong>{{followers}}</strong></h2>
+            </div>
+            <div class="posts-block">
+                <h2><strong>{{user_posts}}</strong></h2>
+            </div>
+        </div>
+    </div>
+        {% if profile.username == request.user.username %}
+        <div class="new-post">
+        <a href="{% url 'new_post' %}" class="btn btn-primary" role="button">Новая запись</a>
+        </div>
+        {% endif %}
+        <div class="features">
+            {% for post in posts %}
+            <a href="{% url 'post' post.author post.id %}">
+            <div class="alert alert-warning">
+                {% thumbnail post.image "960x339" crop="center" upscale=True as im %}
+                <img class="card-img" src="{{ im.url }}">
+                {% endthumbnail %}
+                <h3>{{post.title}}</h3>
+                <hr>
+                <p>{{post.description}}</p>
+                <hr>
+                <p class="footer-post">{{post.author}} | {{post.pub_date}}</p>
+            </div></a>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}
+    

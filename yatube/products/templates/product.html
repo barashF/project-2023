@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}{{product.name}}{% endblock %}
+{% load thumbnail %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      .swiper {
+        height: 350px;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        display: flex;
+      }
+
+      .image-main {
+        display: block;
+        object-fit: cover;
+      }
+    </style>
+    <div class="main-block" id="main-block">
+      <div class="block-product-image-main">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            {% for image in images %}
+            <div class="swiper-slide">
+              <div class="block-product-images-image-main">
+                <img src="{{image.image.url}}">
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    <div class="block-product-texts">
+      <div class="block-product-name-text">{{product.name}}</div>
+      <p class="characteristics">Характеристики</p>
+      <div class="characteristics-texts">
+        {% for desc in descriptions %}
+        <p>{{desc}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+  
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 25000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Профиль{% endblock %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'product/css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+<div class="main-block" id="main-block">
+
+    <div class="block-inf">
+        <a class="inf-a" href=""><div class="inf"><i class="discpik fa-solid fa-box-open fa-7x"></i><p class="discp">мои заказы</p></div></a>
+        <a class="inf-a" href="{% url 'basket' %}"><div class="inf"><i class="discpik fa-solid fa-basket-shopping fa-7x"></i><p class="discp">корзина</p></div></a>
+        <a class="inf-a" href=""><div class="inf"><i class="discpik fa-solid fa-boxes-stacked fa-7x"></i><p class="discp">история заказов</p></div></a>
+    </div>
+</div>
+{% endblock %}

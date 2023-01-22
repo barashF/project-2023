@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Каталог{% endblock %}
+{% load static %}
+{% load thumbnail %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+<div class="main-block">
+    <div class="block-subcategories">
+        {% for category in subcategories %}
+        <div class="block-category">
+            <div class="block-category-img">
+                {% thumbnail category.image "1200x890" crop="center" upscale=True as im %}
+                <img class="block-category-image" src="{{ im.url }}">
+                {% endthumbnail %}
+                <p>{{category.name}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

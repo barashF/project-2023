@@ -1,0 +1,185 @@
+.page-order {
+    float: left;
+    width: 903px;
+    height: 100%;
+    margin-left: 300px;
+    margin-top: 140px;
+}
+.orders-block-pay {
+    float: left;
+    margin-left: 30px;
+}
+.choice-card-pay-block {
+    width: 418px;
+    height: 172px;
+    background: #FFFFFF;
+    border-radius: 12.3px; 
+}
+.text-choice-card-pay-block {
+  margin-left: 20px;
+  margin-top: 17px;
+  font-family: 'Kanit', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #010101;
+}
+
+.card-block {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 110px;
+    height: 74px;
+    background: #FFFFFF;
+    border: 1.12245px solid #000000;
+    border-radius: 10.882px;
+}
+.block-final-pay {
+    width: 425px;
+    height: 394px;
+    background: #FFFFFF;
+    border-radius: 11px;
+}
+.button-pay {
+    margin-top: 31px;
+    margin-left: 37.57px;
+    width: 349.86px;
+    height: 53px;
+    background: #2EC13D;
+    border-radius: 10.8406px;
+}
+.button-text-pay {
+    margin: auto;
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-size: 35.7358px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+.final-inf-order {
+    width: 355px;
+    height: 204px;
+    background: #FFFFFF;
+}
+.line-1 {
+    margin-top: 28px;
+    width: 394px;
+    margin-left: 15.5px;
+    color: rgb(0, 0, 0);
+    transform: rotate(0.14deg);
+}
+.line-2 {
+    margin-top: 14px;
+    width: 394px;
+    margin-left: 15.5px;
+    color: rgb(0, 0, 0);
+    transform: rotate(0.14deg);
+}
+.text-your-order {
+    width: 134px;
+    height: 32px;
+    margin-left: 26px;
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26.6255px;
+    line-height: 32px;
+    color: #060606;
+}
+.text-amount-product {
+    width: 71px;
+    height: 22.24px;
+    margin-left: 26px;
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.8667px;
+    line-height: 23px;
+}
+.text-discount {
+    width: 71px;
+    height: 22.24px;
+    margin-left: 26px;
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.8667px;
+    line-height: 23px;
+}
+.lv2 {
+    margin-top: 50px;
+}
+.final-order-price {
+    width: 384px;
+    height: 42px;
+    margin-left: 26px;
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 31.4795px;
+    line-height: 38px;
+    color: #000000;
+}
+.inf-order-block {
+    width: 418px;
+    height: 465px;
+    margin-top: -192;
+    background: #FFFFFF;
+    border-radius: 11px;
+}
+.inf-order-block-img {
+    width: 184px;
+    height: 131.66px;
+    margin-top: 44px;
+    background: #F80606;
+    border-radius: 11px;
+}
+.inf-order-block-text-price {
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33.931px;
+    color: #000000;
+}
+.inf-order-block-text-amount {
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-size: 19px;
+    color: #000000;
+}
+.inf-order-block-text-adress {
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-size: 19px;
+    color: #000000;
+}
+.inf-order-block-text-client {
+    width: 366px;
+    height: 32px;
+
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 20px;
+
+    color: #000000;
+}
+.inf-order-block-text-delivery_date{
+    width: 366px;
+    height: 31px;
+
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.8105px;
+    line-height: 20px;
+
+    color: #000000;
+}
+.iob {
+    margin-left: 28px;
+}

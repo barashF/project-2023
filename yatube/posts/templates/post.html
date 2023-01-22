@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{post.title}}{% endblock %}
+{% block header %}{{post.title}}{% endblock %}
+{% block content%}
+{% load thumbnail %}
+{% load static %}
+{% load user_filters %}
+<link rel="stylesheet" href="{% static 'main/css/post.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'main/css/comments.css' %}">
+
+<div class="alert alert-light">
+    <div class="post">
+        <h1>{{post.title}}</h1>
+        {% thumbnail post.image "960x339" crop="center" upscale=True as im %}
+        <img class="card-img" src="{{ im.url }}">
+        {% endthumbnail %}
+        <h4>{{post.description}}</h4>
+        <p>{{post.text}}</p>
+        <hr>
+        <p class="footer-post"><a href="{% url 'profile' post.author %}">{{post.author}}</a> | {{post.pub_date}}</p>
+    </div>
+</div>
+{% include 'comments.html '%}
+
+{% endblock %}

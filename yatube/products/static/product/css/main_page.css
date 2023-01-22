@@ -1,0 +1,134 @@
+main .page-products {
+    float: right;
+    margin-top: 100px;
+    margin-right: 60px;
+    width: 90%;
+}
+
+.block-product-main {
+    float: left;
+    width: 230px;
+    height: 336px;
+    margin-left: 20px;
+    background: #FFFFFF;
+    border-radius: 12.16px;
+}
+
+.block-product-title_image {
+    width: 212px;
+    height: 150px;
+    margin-left: 9px;
+    margin-top: 9px;
+    background: #D9D9D9;
+    border-radius: 10px;
+}
+
+.block-product-image {
+    border-radius: 10px;
+    width: 212px;
+    height: 150px;
+}
+
+.block-product-price {
+    width: 196px;
+    height: 24px;
+    margin-left: 15px;
+    margin-top: 5px;
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.block-product-name {
+    width: 212px;
+    height: 38px;
+    margin-left: 15px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+   color: #010101;
+}
+
+.block-product-in_basket-button {
+    position: absolute;
+    width: 104px;
+    height: 40px;
+    margin-left: 9px;
+    margin-top: 30px;
+    background: #F90C0C;
+    box-shadow: 0px 4px 4px rgba(249, 12, 12, 0.35);
+    border-radius: 10.1333px;
+    transition: transform .3s ease;
+}
+.block-product-in_basket-button:hover {
+    background: #d31919;
+    box-shadow: 0px 4px 4px rgba(130, 5, 5, 0.35);
+}
+.block-product-in_basket-text {
+    width: 90px;
+    height: 15px;
+    color: #FFF;
+    margin: auto;
+    margin-top: 8px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 20px;
+}
+.link-product {
+    text-decoration: none;
+}
+.link-product p {
+    color: #010101;
+}
+.link-product:hover .block-product-name {
+    color: #d31919;
+}
+.block-categories {
+    float: left;
+    display: none;
+    position: fixed;
+    margin-left: 90px;
+    margin-top: 80px;
+    background-color: 2c2c2c;
+}
+.block-category {
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 300px;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.block-category-img {
+    width: 200px;
+    height: 150px;
+    background-color: #ffffff;
+    margin-left: 50px;
+    margin-top: 35px;
+}
+.block-category-img p {
+    text-align: center;
+    color: #010101;
+    font-family: 'Nunito';
+}
+.block-category-image {
+    margin-left: 40px;
+    width: 120;
+    height: 89px;
+}
+.block-category:hover p {
+    color: #c20f0f;
+}
+.block-subcategories {
+    float: left;
+    
+    background-color: 2c2c2c;
+}

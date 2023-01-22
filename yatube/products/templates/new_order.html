@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}оформление заказа{% endblock %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'product/css/new_order.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+<div class="main-block" id="main-block">
+        <div class="choice-card-pay-block orders-block-pay">
+            <p class="text-choice-card-pay-block">Способы оплаты</p>
+            <div class="card-block"></div>
+            <div class="card-block"></div>
+            <div class="card-block"></div>
+        </div>
+        <div class="block-final-pay orders-block-pay">
+            <button class="button-pay"><p class="button-text-pay">оплатить</p></button>
+            <div class="final-inf-order">
+                <hr class="line-1">
+                <p class="text-your-order">Ваш заказ</p>
+                <p class="text-amount-product">Товары</p>
+                <p class="text-discount">Скидка</p>
+                <hr class="line-1 lv2">
+            </div>
+            <p class="final-order-price">Итого</p>
+        </div>
+        <div class="inf-order-block orders-block-pay">
+            <div class="inf-order-block-img iob">
+
+            </div>
+            <p class="inf-order-block-text-price iob">Цена</p>
+            <p class="inf-order-block-text-amount iob">количество единиц товара</p>
+            <p class="inf-order-block-text-adress iob">адрес доставки</p>
+            <hr class="line-2">
+            <p class="inf-order-block-text-client iob">Контакты заказщика</p>
+            <hr class="line-2">
+            <p class="inf-order-block-text-delivery_date iob">Дата доставки</p>
+        </div>
+</div>
+{% endblock %}

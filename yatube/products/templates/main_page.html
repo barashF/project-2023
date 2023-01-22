@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Market{% endblock %}
+{% block content %}
+{% load static %}
+{% load thumbnail %}
+<link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&family=Roboto+Slab&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+<div class="main-block" id="main-block">
+        {% for product in slots %}
+        <div class="block-product-main">
+            <a class="link-product" href="{% url 'product' product.id %}">
+            <div class="block-product-title_image">
+                {% thumbnail product.image_title "2100x1500" crop="center" upscale=True as im %}
+                <img class="block-product-image" src="{{ im.url }}">
+                {% endthumbnail %}
+            </div>
+            <p class="block-product-price">{{product.price}}</p>
+            <p class="block-product-name">{{product.name | truncatechars:80}}</p>
+            <a href="{% url 'add_basket' product.id %}"><div class="block-product-in_basket-button"><p class="block-product-in_basket-text">В корзину</p></div></a>
+            </a>
+        </div>
+        {% endfor %}
+</div>
+{% endblock %}

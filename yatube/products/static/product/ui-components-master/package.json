@@ -1,0 +1,36 @@
+{
+  "name": "ui-components",
+  "version": "1.0.0",
+  "description": "User Interface Web Components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itchief/ui-components.git"
+  },
+  "author": "Alexander Maltsev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itchief/ui-components/issues"
+  },
+  "homepage": "https://github.com/itchief/ui-components#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.7.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.0.4",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.2.0"
+  },
+  "scripts": {
+    "stylelint": "stylelint '**/*{.css,.scss}'",
+    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
+    "js-minify": "terser simple-adaptive-slider/js/simple-adaptive-slider.js --compress --mangle --output simple-adaptive-slider/js/simple-adaptive-slider.min.js"
+  },
+  "dependencies": {
+    "terser": "^5.15.0"
+  }
+}

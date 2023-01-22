@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Корзина{% endblock %}
+{% load static %}
+{% block content%}
+{% load thumbnail %}
+<link rel="stylesheet" href="{% static 'product/css/page_basket.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+<div class="main-block" id="main-block">
+    {% for basket in basket %}
+    <a class="link-product" href="{% url 'product' basket.product.id %}">
+    <div class="block-product-main">
+        <div class="block-product-title_image">
+            {% thumbnail basket.product.image_title "2100x1500" crop="center" upscale=True as im %}
+            <img class="block-product-image" src="{{ im.url }}">
+            {% endthumbnail %}
+        </div>
+        <p class="block-product-price">{{basket.product.price}}</p>
+        <p class="block-product-name">{{ basket.product.name | truncatechars:80 }}</p>
+        <div class="footer-product">
+            <a href="{% url 'new_order' basket.id %}"><div class="go-order">оформить заказ</div></a>
+        </div>
+    </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

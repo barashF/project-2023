@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+
+<div class="features">
+    <h1>Редактировать</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.image }}
+        {{ form.description }}<br>
+        {{ form.text }}<br>
+        <button class="btn btn-success" type="submit">Сохранить изменения</button>
+    </form>
+</div>
+
+{% endblock %}
