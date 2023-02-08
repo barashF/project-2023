@@ -5,22 +5,68 @@
 {% load thumbnail %}
 <link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
 <link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/page_basket.css' %}">
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&family=Roboto+Slab&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+
 <div class="main-block" id="main-block">
         {% for product in slots %}
-        <div class="block-product-main">
+        <div class="block-product-main" id="{{product.id}}">
             <a class="link-product" href="{% url 'product' product.id %}">
             <div class="block-product-title_image">
                 {% thumbnail product.image_title "2100x1500" crop="center" upscale=True as im %}
                 <img class="block-product-image" src="{{ im.url }}">
                 {% endthumbnail %}
             </div>
-            <p class="block-product-price">{{product.price}}</p>
+            <p class="block-product-price">{{product.price}}₽</p>
             <p class="block-product-name">{{product.name | truncatechars:80}}</p>
-            <a href="{% url 'add_basket' product.id %}"><div class="block-product-in_basket-button"><p class="block-product-in_basket-text">В корзину</p></div></a>
             </a>
+            <button class="block-product-in_basket-button" id="{{product.id}}">В корзину</button>
+            <a href="{% url 'basket' %}"><button class="go-basket" id="{{prodcut.id}}">Заказать</button></a>
         </div>
         {% endfor %}
 </div>
+<script>
+    $('.block-product-in_basket-button').on('click', function(e){
+        console.log("work");
+        product_id = e.target.id
+        e.preventDefault();
+        let order = document.querySelectorAll('.go-basket');
+        e.target.style.display = 'None';
+        for(i in order){
+            if(order[i].id == product_id){
+                order[i].style.display = 'block';
+            } 
+        }
+        $.post('add_basket/', {'product_id':product_id, 'csrfmiddlewaretoken':"{{ csrf_token }}"});
+    })
+    $(document).ready(function(){
+        setInterval(function(){
+            $.ajax({
+            url:'check_basket',
+            success: function(response){
+                let elements = document.querySelectorAll('.block-product-main')
+                console.log(elements)
+                for(i in elements){
+                    if(jQuery.inArray(Number(elements[i].id), response.products) != -1){
+                        let in_basket = elements[i].querySelector('.block-product-in_basket-button');
+                        let order = elements[i].querySelector('.go-basket');
+                        in_basket.style.display = 'None';
+                        order.style.display = 'block';
+                    }
+                    else{
+                        let in_basket = elements[i].querySelector('.block-product-in_basket-button');
+                        let order = elements[i].querySelector('.go-basket');
+                        in_basket.style.display = 'block';
+                        order.style.display = 'none';
+                    }
+
+                }
+            }})
+        },1000)
+    })
+</script>    
+
 {% endblock %}

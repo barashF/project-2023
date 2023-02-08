@@ -1,38 +1,51 @@
 {% extends 'base.html' %}
 {% block title %}оформление заказа{% endblock %}
 {% load static %}
+{% load thumbnail %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'product/css/new_order.css' %}">
 <link rel="stylesheet" href="{% static 'product/css/product.css' %}">
-<div class="main-block" id="main-block">
-        <div class="choice-card-pay-block orders-block-pay">
+<div class="page-order" id="main-block">
+    <div class="left-block-order  orders-block-pay">
+        <div class="choice-card-pay-block">
             <p class="text-choice-card-pay-block">Способы оплаты</p>
             <div class="card-block"></div>
             <div class="card-block"></div>
             <div class="card-block"></div>
         </div>
-        <div class="block-final-pay orders-block-pay">
-            <button class="button-pay"><p class="button-text-pay">оплатить</p></button>
-            <div class="final-inf-order">
-                <hr class="line-1">
-                <p class="text-your-order">Ваш заказ</p>
-                <p class="text-amount-product">Товары</p>
-                <p class="text-discount">Скидка</p>
-                <hr class="line-1 lv2">
-            </div>
-            <p class="final-order-price">Итого</p>
-        </div>
-        <div class="inf-order-block orders-block-pay">
-            <div class="inf-order-block-img iob">
-
-            </div>
-            <p class="inf-order-block-text-price iob">Цена</p>
-            <p class="inf-order-block-text-amount iob">количество единиц товара</p>
+        <div class="inf-order-block">
+            <a class="link-product" href="{% url 'product' product.id %}"><div class="inf-order-block-img iob">
+                {% thumbnail product.image_title "2100x1500" crop="center" upscale=True as im %}
+                <img class="" src="{{ im.url }}">
+                {% endthumbnail %}
+            </div></a>
+            <p class="inf-order-block-text-price iob"><span id="price">{{product.price}}</span> ₽</p>
+            <p class="inf-order-block-text-amount iob">количество единиц товара <input value="1" class="inf-order-block-text-amount-input" type="number" id="input"></p>
             <p class="inf-order-block-text-adress iob">адрес доставки</p>
             <hr class="line-2">
             <p class="inf-order-block-text-client iob">Контакты заказщика</p>
             <hr class="line-2">
             <p class="inf-order-block-text-delivery_date iob">Дата доставки</p>
         </div>
+    </div>
+    <div class="block-final-pay orders-block-pay">
+        <button class="button-pay"><p class="button-text-pay">оплатить</p></button>
+        <div class="final-inf-order">
+            <hr class="line-1">
+            <p class="text-your-order">Ваш заказ</p>
+            <p class="text-amount-product">Товары <span class="span-main"><span class="1" id="amount">1</span> <span class="right">шт</span></span></p>
+            <p class="text-discount">Скидка <span class="span-main"><span class="1" id="discount">0</span> <span class="right">%</span></span></p>
+            <hr class="line-1 lv2">
+        </div>
+        <p class="final-order-price">Итого <span id="result">{{product.price}}</span> ₽</p>
+    </div>
 </div>
+<script>
+    input.oninput = function() {
+        var price = Number(document.getElementById('price').innerHTML)
+        document.getElementById('result').innerHTML = Math.abs(input.value) * price;
+        document.getElementById('amount').innerHTML = Math.abs(input.value)
+        document.getElementById('input').value = Math.abs(input.value)
+    };
+</script>
 {% endblock %}

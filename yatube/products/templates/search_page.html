@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}{{text_search}}{% endblock %}
+{% block content %}
+{% load static %}
+{% load thumbnail %}
+<link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/search_page.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/page_basket.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+<div class="main-block" id="main-block">
+    <button class="button-filter" onclick="(document.querySelector('.filters').style.display='block')"><i class="fa-solid fa-sliders fa-2x"></i></button>
+    <div class="filters">
+        <h4>Фильтры</h4>
+        <div class="brands">
+            <p class="H-brand">Бренд</p>
+            {% for brand in brands %}
+                <p><label><input class="brand" name="{{brand}}" type="checkbox">{{brand.name}}</label></p>    
+            {% endfor %}
+        </div>
+    </div>
+    {% for product in products %}
+        <div class="block-product-main" id="{{product.id}}" brand="{{product.brand}}">
+            <a class="link-product" href="{% url 'product' product.id %}">
+            <div class="block-product-title_image">
+                {% thumbnail product.image_title "2100x1500" crop="center" upscale=True as im %}
+                <img class="block-product-image" src="{{ im.url }}">
+                {% endthumbnail %}
+            </div>
+            <p class="block-product-price">{{product.price}}₽</p>
+            <p class="block-product-name">{{product.name | truncatechars:80}}</p>
+            </a>
+            <button class="block-product-in_basket-button" id="{{product.id}}">В корзину</button>
+            <a href="{% url 'basket' %}"><button class="go-basket" id="{{prodcut.id}}">Заказать</button></a>
+        </div>
+    {% endfor %}
+</div>
+<script>
+    $('.brands').change(function(){
+        const values = $('input:checked', this).get();
+        let brands = [];
+        for(i in values){
+            brands.push(values[i].getAttribute('name'));
+        }
+        let products = document.querySelectorAll('.block-product-main')
+        for(i in products){
+            if(jQuery.inArray(products[i].getAttribute('brand'), brands) == -1){
+                products[i].style.display = 'none';
+                console.log(products[i].getAttribute('brand'));
+            }
+            else{
+                products[i].style.display = 'block';
+            }
+        }
+    })
+    $('.block-product-in_basket-button').on('click', function(e){
+        console.log("work");
+        product_id = e.target.id
+        e.preventDefault();
+        $.post("{% url 'add_basket' %}", {'product_id':product_id, 'csrfmiddlewaretoken':"{{ csrf_token }}"});
+    })
+    $(document).ready(function(){
+        setInterval(function(){
+            $.ajax({
+            type: 'GET',
+            url:"{% url 'check_basket' %}",
+            success: function(response){
+                let elements = document.querySelectorAll('.block-product-main')
+                console.log(elements)
+                for(i in elements){
+                    if(jQuery.inArray(Number(elements[i].id), response.products) != -1){
+                        let in_basket = elements[i].querySelector('.block-product-in_basket-button');
+                        let order = elements[i].querySelector('.go-basket');
+                        in_basket.style.display = 'None';
+                        order.style.display = 'block';
+                    }
+                    else{
+                        let in_basket = elements[i].querySelector('.block-product-in_basket-button');
+                        let order = elements[i].querySelector('.go-basket');
+                        in_basket.style.display = 'block';
+                        order.style.display = 'none';
+                    }
+                }
+            }})
+        },1000);
+    })
+</script>    
+{% endblock %}

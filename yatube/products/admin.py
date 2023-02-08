@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, ImgProduct, Category, Subcategory
+from .models import Product, ImgProduct, Category, Subcategory, Basket, Brand
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("pk", "name", "price", "category", "subcategory","pub_date")
@@ -19,6 +19,13 @@ class SubcategoryAdmin(admin.ModelAdmin):
     list_display = ("pk", "name", "category", "image")
     search_fields = ["name",]
 
+class BasketAdmin(admin.ModelAdmin):
+    list_display = ("pk", "product", "pub_date")
+
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ("pk", "name")
+admin.site.register(Brand, BrandAdmin)
+admin.site.register(Basket, BasketAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Subcategory, SubcategoryAdmin)
 admin.site.register(Product, ProductAdmin)

@@ -5,30 +5,88 @@
     width: 90%;
 }
 
-.block-inf {margin-left: 140px;}
-
-.inf {
+.block-client-inf-data {
+    width: 200px;
+    height: 50px;
     text-align: center;
+    font-family: 'Nunito';
+    color: #fff;
+    font-size: 22px;
+    background-color: rgb(20, 20, 199);
+    border-radius: 12px;
+    padding-top: 6px;
+}
+.block-client-inf-img {
+    margin-left: 25px;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+}
+.block-client-inf {
     float: left;
-    margin-left: 50px;
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
-    background-color: #fff;
+    margin-left: 100px;
+    width: 200px;
 }
-
-.discpik {
-    margin-top: 30px;
+.profile-username {
+    text-align: center;
 }
-
-p.discp {
+.profile-username p {
     font-size: 25px;
-    font-family: sans-serif;
+    font-family: 'Nunito';
+    color: #fff;
+    margin-top: 5px;
 }
-.inf-a {
-    color: rgb(30, 29, 29);
+.block-profile-inf {
+    float: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 575px;
+    height: 100%;
 }
-.inf:hover {
-    color: rgb(30, 29, 29);
-    background-color: rgb(175, 58, 58);
+.block-profile-inf-first {
+    width: 575px;
+    height: 179px;
+}
+.block-profile-inf-first-str {
+    width: 179px;
+    height: 179px;
+    margin-left: 9.5px;
+    float: left;
+    background: #ffffff;
+    border-radius: 10.2286px;
+}
+.block-profile-inf-my_cards {
+    position: absolute;
+    width: 575px;
+    height: 172px;
+    margin-top: 20px;
+    background: #FFFFFF;
+    border-radius: 12.3px;
+}
+.block-profile-inf-my_cards-text {
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 24px;
+    font-family: 'Nunito';
+    font-weight: 600;
+}
+.my_cards {
+    position: absolute;
+    width: 546px;
+    height: 74px;
+}
+.my_cards-block-card {
+    box-sizing: border-box;
+    width: 110px;
+    height: 74px;
+    margin-left: 26px;
+    float: left;
+    background: #FFFFFF;
+    border: 1.12245px solid #000000;
+    border-radius: 10.882px;
+}
+.img-card {
+    width: 100px;
+    height: 70px;
 }

@@ -1,0 +1,42 @@
+.button-filter {
+    color: #fff;
+    background: transparent;
+    border:none;
+    position: fixed;
+    right: 0px;
+    margin-right: 490px;
+    margin-top: -85px;
+    z-index: 3;
+}
+.filters {
+    display: none;
+    position: fixed;
+    margin-top: -40px;
+    right: 0px;
+    width: 300px;
+    background-color: black;
+    height: 100%;
+    z-index: 3;
+}
+.filters h4{
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+}
+.brands {
+    margin-left: 20px;
+}
+.brands .H-brand{
+    color: #fff;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+}
+.brands p{
+    color: #fff;
+    margin-left: 10px;
+}

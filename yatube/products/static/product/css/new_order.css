@@ -1,9 +1,8 @@
 .page-order {
     float: left;
-    width: 903px;
     height: 100%;
     margin-left: 300px;
-    margin-top: 140px;
+    margin-top: 110px;
 }
 .orders-block-pay {
     float: left;
@@ -17,8 +16,8 @@
 }
 .text-choice-card-pay-block {
   margin-left: 20px;
-  margin-top: 17px;
-  font-family: 'Kanit', sans-serif;
+  margin-top: 0px;
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -48,12 +47,12 @@
     margin-left: 37.57px;
     width: 349.86px;
     height: 53px;
-    background: #2EC13D;
+    background: #1c9a29;
     border-radius: 10.8406px;
 }
 .button-text-pay {
     margin: auto;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-size: 35.7358px;
     line-height: 26px;
@@ -82,7 +81,7 @@
     width: 134px;
     height: 32px;
     margin-left: 26px;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 26.6255px;
@@ -90,20 +89,23 @@
     color: #060606;
 }
 .text-amount-product {
-    width: 71px;
+    width: 171px;
     height: 22.24px;
     margin-left: 26px;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18.8667px;
     line-height: 23px;
 }
+.span-main {
+    float: right;
+}
 .text-discount {
-    width: 71px;
+    width: 171px;
     height: 22.24px;
     margin-left: 26px;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18.8667px;
@@ -124,9 +126,10 @@
     color: #000000;
 }
 .inf-order-block {
+    position: absolute;
     width: 418px;
-    height: 465px;
-    margin-top: -192;
+    height: 480px;
+    margin-top: 30px;
     background: #FFFFFF;
     border-radius: 11px;
 }
@@ -134,24 +137,28 @@
     width: 184px;
     height: 131.66px;
     margin-top: 44px;
-    background: #F80606;
+    border-radius: 11px;
+}
+.inf-order-block-img img {
+    width: 184px;
+    height: 131.66px;
     border-radius: 11px;
 }
 .inf-order-block-text-price {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Kanit';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 250;
     font-size: 33.931px;
     color: #000000;
 }
 .inf-order-block-text-amount {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito';
     font-style: normal;
     font-size: 19px;
     color: #000000;
 }
 .inf-order-block-text-adress {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito';
     font-style: normal;
     font-size: 19px;
     color: #000000;
@@ -160,7 +167,7 @@
     width: 366px;
     height: 32px;
 
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
     font-size: 19px;
@@ -172,13 +179,17 @@
     width: 366px;
     height: 31px;
 
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
     font-size: 16.8105px;
     line-height: 20px;
 
     color: #000000;
+}
+.inf-order-block-text-amount-input {
+    margin-left: 11px;
+    width: 50px;
 }
 .iob {
     margin-left: 28px;
