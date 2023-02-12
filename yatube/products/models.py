@@ -9,13 +9,22 @@ class Category(models.Model):
     name = models.CharField(max_length=151)
     image = models.ImageField(upload_to='products/')
 
+    def __str__(self):
+        return self.name
+
 class Subcategory(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=151)
     image = models.ImageField(upload_to='products/')
 
+    def __str__(self):
+        return self.name
+
 class Brand(models.Model):
     name = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.name
     
 class Product(models.Model):
     name = models.CharField(max_length=400)
@@ -27,6 +36,9 @@ class Product(models.Model):
     brand = models.ForeignKey(Brand,  on_delete=models.CASCADE)
     image_title = models.ImageField(upload_to='products/')
 
+    def __str__(self):
+        return self.name
+
 class ImgProduct(models.Model):
     image = models.ImageField(upload_to='products/')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
@@ -36,12 +48,20 @@ class Basket(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date = models.DateTimeField("дата добавления в корзину", auto_now_add=True)
 
+class Status(models.Model):
+    name = models.CharField(max_length=151)
+    percent = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
 class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date = models.DateTimeField("дата оформления заказа", auto_now_add=True)
     price = models.FloatField("общая цена заказа")
-    amount = models.IntegerField("количество единиц товара", default=0)
+    amount = models.IntegerField("количество единиц товара", default=1)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, default=Status.objects.first().pk)
     inf_card = models.CharField(max_length=151)
 
 class ClientInf(models.Model):

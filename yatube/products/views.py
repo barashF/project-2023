@@ -13,10 +13,11 @@ User = get_user_model()
 def main_page_market(request):
     slots = Product.objects.order_by("-pub_date").all()
     categories = Category.objects.all()
-    basket = Basket.objects.filter(user=request.user)
-    products = []
-    for i in basket:
-        products.append(i.product)
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
+        products = []
+        for i in basket:
+            products.append(i.product)
     return render(request, "main_page.html", {'categories':categories, 'slots':slots})
 
 def check_basket(request):
@@ -75,6 +76,17 @@ def new_order(request, basket_id):
     categories = Category.objects.all()
     return render(request, 'new_order.html', {'product':product, 'categories':categories})
 
+def make_order(request):
+    product = get_object_or_404(Product, pk=request.POST['product_id'])
+    user = request.user
+    Basket.objects.filter(user=request.user, product=product).delete()
+    pub_date = datetime.now
+    amount = int(request.POST['amount'])
+    price = product.price * amount
+    inf_card = '242235523235'
+    Order.objects.create(product=product, user=user, pub_date=pub_date, amount=amount, price=price, inf_card=inf_card)
+    return redirect("basket")
+
 def product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     categories = Category.objects.all()
@@ -104,3 +116,8 @@ def search(request):
         return render(request, 'search_page.html', {"categories":categories, 'text_search':text_search, 'products':products, 'brands':brands})
     else:
         return redirect('market')
+
+def my_orders(request):
+    categories = Category.objects.all()
+    ordes = Order.objects.filter(user=request.user).order_by("-pub_date")
+    return render(request, "page_orders.html", {'categories':categories, 'orders':ordes})

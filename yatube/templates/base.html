@@ -41,7 +41,7 @@
             <a class="p-2 text-dark" href="{% url 'market' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>
             <a class="p-2 text-dark" href="{% url 'profile' user.username %}"><li><i class="fa-regular fa-circle-user"></i>Профиль</li></a>
             <a class="p-2 text-dark" href="{% url 'basket' %}"><li><i class="fa-solid fa-cart-shopping"></i>Корзина</li></a>
-            <a class="p-2 text-dark" href=""><li><i class="fa-solid fa-box"></i>Заказы</li></a>
+            <a class="p-2 text-dark" href="{% url 'my_orders' %}"><li><i class="fa-solid fa-box"></i>Заказы</li></a>
             <a class="p-2 text-dark" href="{% url 'logout' %}"><li><i class="fa-solid fa-right-from-bracket"></i>Выйти</li></a>
             {% else %}
             <a href="{% url 'market' %}"><li>Главная</li></a>
