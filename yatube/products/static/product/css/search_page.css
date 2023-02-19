@@ -4,8 +4,9 @@
     border:none;
     position: fixed;
     right: 0px;
-    margin-right: 490px;
-    margin-top: -85px;
+    font-size: 2.1vh;
+    margin-right: 33%;
+    margin-top: -7.1%;
     z-index: 3;
 }
 .filters {

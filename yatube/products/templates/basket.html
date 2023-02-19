@@ -12,7 +12,7 @@
     <a class="link-product" href="{% url 'product' basket.product.id %}">
     <div class="block-product-main" id="{{basket.id}}">
         <div class="block-product-title_image">
-            {% thumbnail basket.product.image_title "2100x1500" crop="center" upscale=True as im %}
+            {% thumbnail basket.product.image_title "2300x1500" crop="center" upscale=True as im %}
             <img class="block-product-image" src="{{ im.url }}">
             {% endthumbnail %}
         </div>

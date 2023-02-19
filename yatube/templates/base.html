@@ -56,7 +56,7 @@
         <a href="{% url 'catalog' category.id %}">
         <div class="block-category">
             <div class="block-category-img">
-                {% thumbnail category.image "1200x890" crop="center" upscale=True as im %}
+                {% thumbnail category.image "1300x1000" crop="center" upscale=True as im %}
                 <img class="block-category-image" src="{{ im.url }}">
                 {% endthumbnail %}
                 <p>{{category.name}}</p>

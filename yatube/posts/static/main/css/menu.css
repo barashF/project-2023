@@ -2,9 +2,10 @@
     width: 17%;
     height: 100vh;
     background-color: black;
+    border-right: 1px solid rgb(175, 58, 58);
     z-index: 2;
     position: fixed;
-    left: -200px;
+    left: -13.5%;
     transition: 0.3s;
 }
 .dropdown:hover {
@@ -12,8 +13,8 @@
     transition: 0.3s;
 }
 .dropdown-content {
-    margin-left: 20px;
-    margin-top: 100px;
+    margin-left: 14%;
+    margin-top: 40%;
     z-index: 0;
 }
 .dropdown a{
@@ -22,9 +23,11 @@
     outline: none
 }
 .dropdown li {
+    font-size: 1.1vw;
+    font-weight: 500;
     color: #fff;
     transition: 0.3s;
-    margin-top: 20px;
+    margin-top: 7%;
 }
 .dropdown li:hover{
     color: rgb(175, 58, 58);
@@ -33,16 +36,16 @@
 }
 .dropdown i {
     float: right;
-    margin-right: 25px;
-    margin-top: 4px;
+    margin-right: 10%;
+    margin-top: 2.5%;
 }
 .dropdown:hover i {
     float: left;
-    margin-right: 4px;
+    margin-right: 5%;
 }
 .only-logo {
-    width: 38px;
-    height: 40px;
+    width: 40%;
+    height: 40%;
     margin-left: 158px;
     margin-top: -106px;
     transition: 0.4s;
@@ -52,10 +55,10 @@
     display: none;
 }
 .dropdown .logo-menu {
-    width: 120px;
-    height: 50px;
-    margin-left: 50px;
-    margin-top: 30px;
+    width: 60%;
+    height: 8%;
+    margin-left: 17%;
+    margin-top: 10%;
     float: left;
     z-index: 2;
 }

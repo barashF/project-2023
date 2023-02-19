@@ -5,18 +5,16 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
 <link rel="stylesheet" href="{% static 'product/css/product.css' %}">
-<div class="main-block" id="main-block">
-    <div class="block-subcategories">
-        {% for category in subcategories %}
-        <div class="block-category">
-            <div class="block-category-img">
-                {% thumbnail category.image "1200x890" crop="center" upscale=True as im %}
-                <img class="block-category-image" src="{{ im.url }}">
-                {% endthumbnail %}
-                <p>{{category.name}}</p>
-            </div>
+<div class="block-subcategories" id="main-block">
+    {% for sub in subcategories %}
+    <div class="block-category">
+        <div class="block-category-img">
+            {% thumbnail sub.image "1300x1000" crop="center" upscale=True as im %}
+            <img class="block-category-image" src="{{ im.url }}">
+            {% endthumbnail %}
+            <p>{{sub.name}}</p>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </div>
 {% endblock %}

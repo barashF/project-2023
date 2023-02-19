@@ -11,7 +11,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
 <div class="main-block" id="main-block">
-    <button class="button-filter" onclick="(document.querySelector('.filters').style.display='block')"><i class="fa-solid fa-sliders fa-2x"></i></button>
+    <button class="button-filter"><i class="fa-solid fa-sliders fa-2x"></i></button>
     <div class="filters">
         <h4>Фильтры</h4>
         <div class="brands">
@@ -85,6 +85,20 @@
                 }
             }})
         },1000);
+    })
+    let but_filt = false;
+    $('.button-filter').on('click', function(){
+        console.log('work')
+        if(but_filt == false){
+            but_filt = true
+            document.querySelector('.button-filter').style.color = 'red';
+            document.querySelector('.filters').style.display = 'block';
+        }
+        else{
+            but_filt = false
+            document.querySelector('.button-filter').style.color = 'white';
+            document.querySelector('.filters').style.display='none'
+        }
     })
 </script>    
 {% endblock %}
