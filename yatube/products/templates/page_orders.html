@@ -25,12 +25,12 @@
             <p>{{order.status.name}}</p>
         </div>
         <div class="titles name">
-            <a class="link-product" href="{% url 'product' order.product.id %}"><div class="inf-order-block-img iob">
+            <a class="link-product" href="{% url 'product' order.product.id %}"><div class="my-orders-product iob">
                 {% thumbnail order.product.image_title "2100x1500" crop="center" upscale=True as im %}
                 <img class="" src="{{ im.url }}">
                 {% endthumbnail %}
             </div>
-            <p class="block-product-name">{{order.product.name | truncatechars:80}}<p class="block-product-name"></p></a>
+            <p class="block-product-name">{{order.product.name | truncatechars:80}}</p></a>
         </div>
         <div class="titles price"><p class="order-price">{{order.price}} ₽</p><p>(За {{order.amount}} ед.)</p></div>
     </div>

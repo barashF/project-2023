@@ -44,9 +44,9 @@
             <a class="p-2 text-dark" href="{% url 'my_orders' %}"><li><i class="fa-solid fa-box"></i>Заказы</li></a>
             <a class="p-2 text-dark" href="{% url 'logout' %}"><li><i class="fa-solid fa-right-from-bracket"></i>Выйти</li></a>
             {% else %}
-            <a href="{% url 'market' %}"><li>Главная</li></a>
-            <a class="p-2 text-dark" href="{% url 'login' %}"><li>Войти</li></a> |
-            <a class="p-2 text-dark" href="{% url 'signup' %}"><li>Регистрация</li></a>
+            <a href="{% url 'market' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>
+            <a class="p-2 text-dark" href="{% url 'login' %}"><li><i class="fa-solid fa-right-to-bracket"></i>Войти</li></a> |
+            <a class="p-2 text-dark" href="{% url 'signup' %}"><li><i class="fa-solid fa-user-plus"></i>Регистрация</li></a>
             {% endif %}
         </ul>
     </aside>

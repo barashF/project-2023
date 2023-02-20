@@ -16,20 +16,23 @@
     position: relative;
 }
 .footer-product {
-    position: absolute;
-    float: right;
-    margin-top: 30px;
+    float: left;
+    width: 100%;
+    margin-top: 13%;
+}
+.footer-product a {
+    text-decoration: none;
 }
 .go-order {
     color: #fff;
     float: left;
-    height: 40px;
-    width: 150px;
-    margin-left: 5px;
+    height: 12%;
+    width: 65%;
+    margin-left: 2%;
     background-color: rgb(50, 37, 189);
-    border-radius: 10px;
-    padding-top: 5px;
-    padding-left: 16px;
+    border-radius: 1.3vh;
+    padding-top: 2.35%;
+    padding-left: 6.5%;
 }
 .go-order:hover{
     background-color: rgb(35, 75, 140);
@@ -55,7 +58,7 @@
     border-radius: 7px;
     margin-left: 4px;
     min-width: 30px;
-    height: 40px;
+    height: 12%;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
