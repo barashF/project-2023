@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+ 
+{% block title %}Регистрация{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/signup.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+    <div class="main-block" id="main-block">
+        <form method="post">
+            {% csrf_token %}
+            <div class="container">
+                <h1></h1>
+                <h2>Create a new account</h2>
+                <fieldset class="form-fieldset ui-input __first">
+                    <input name="username" type="text" class="username">
+                    <label for="username">
+                        <span data-text="Username" class="username">Введите ник<p class="username-error error"></p></span>
+                    </label>
+                  </fieldset>
+                <fieldset class="form-fieldset ui-input __second">
+                    <input name="email" type="text" class="email">
+                    <label for="username">
+                        <span data-text="Username" class="username">Введите почту <p class="email-error error"></p></span>
+                    </label>
+                </fieldset>
+                <fieldset class="form-fieldset ui-input __third">
+                    {{form.password1}}
+                    <label for="username">
+                        <span data-text="Username" class="username">Введите пароль<p></p></span>
+                    </label>
+                </fieldset>
+                <fieldset class="form-fieldset ui-input __fourth">
+                    {{form.password2}}
+                    <label for="username">
+                        <span data-text="Username" class="username">Повторите пароль<p class="password-error error">{{password_error}}</p></span>
+                    </label>
+                  </fieldset>
+                  <div class="form-footer">
+                    <button class="btn-create">Create Account</button>
+                  </div>
+            </div>
+        </form>
+    </div>
+<script>
+    $('.email').on("input", function(){
+        let email = document.querySelector('.email').value
+        console.log(email)
+        $.ajax({
+            url:'{% url "check_email" %}',
+            method: 'get',
+            success: function(response){
+                if(jQuery.inArray(email, response.emails) != -1){
+                    document.querySelector('.email-error').innerHTML = 'Данная почта уже зарегистрирована'
+                }
+                else{
+                    document.querySelector('.email-error').innerHTML = ''
+                }
+            }
+        })
+    })
+    $('.username').on("input", function(){
+        let username = document.querySelector('.username').value
+        $.ajax({
+            url:'{% url "check_username" %}',
+            method: 'get',
+            success: function(response){
+                if(jQuery.inArray(username, response.usernames) != -1){
+                    document.querySelector('.username-error').innerHTML = 'Аккаунт с таким ником уже зарегистрирован'
+                }
+                else{
+                    document.querySelector('.username-error').innerHTML = ''
+                }
+            }
+        })
+    })
+</script>
+{% endblock %}
