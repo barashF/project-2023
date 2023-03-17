@@ -38,3 +38,7 @@ class RegistrForm(UserCreationForm):
         if User.objects.filter(email=cleaned_data.get('email')).exists():
             raise forms.ValidationError('email', "Эта почта уже зарегестрированна")
         return cleaned_data
+
+class LoginForm(forms.Form):
+    email = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)

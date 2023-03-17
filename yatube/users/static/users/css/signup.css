@@ -133,3 +133,9 @@ h2 {
   color: rgb(175, 58, 58);
   font-size: 1.5vh;
 }
+
+label {
+  border: 0;
+  border-top: 1px solid #6EB1FF;
+  outline: 0;
+}

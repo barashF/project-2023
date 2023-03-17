@@ -121,3 +121,4 @@ def my_orders(request):
     categories = Category.objects.all()
     ordes = Order.objects.filter(user=request.user).order_by("-pub_date")
     return render(request, "page_orders.html", {'categories':categories, 'orders':ordes})
+

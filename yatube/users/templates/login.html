@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Вход{% endblock%}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/signup.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+    <div class="main-block" id="main-block">
+        <form method="post">
+            {% csrf_token %}
+            <div class="container">
+                <h1></h1>
+                <h2>Вход в аккаунт</h2>
+                <fieldset class="form-fieldset ui-input __second">
+                    <input name="email" type="text" class="email">
+                    <label for="username">
+                        <span data-text="Username" class="username">введите почту <p class="email-error error">{{error_email}}</p></span>
+                    </label>
+                </fieldset>
+                <fieldset class="form-fieldset ui-input __third">
+                    <input name="password" type="text" class="password">
+                    <label for="username">
+                        <span data-text="Username" class="username">Введите пароль<p class="email-error error">{{error_pass}}</p></span>
+                    </label>
+                </fieldset>
+                  <div class="form-footer">
+                    <button class="btn-create">Войти</button>
+                  </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
