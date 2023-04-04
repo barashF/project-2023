@@ -1,12 +1,13 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Product, Basket, Order, ImgProduct, Category, Subcategory, Brand
+from .models import Product, Basket, Order, ImgProduct, Category, Subcategory, Brand, Status
 from .forms import ProductForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from datetime import datetime
 import simplejson as json
 from django.db.models import Q
+from users.models import Profile
 
 User = get_user_model()
 
@@ -74,7 +75,8 @@ def new_order(request, basket_id):
     product = get_object_or_404(Product, pk=basket.product.id)
     product.price = int(product.price)
     categories = Category.objects.all()
-    return render(request, 'new_order.html', {'product':product, 'categories':categories})
+    address = get_object_or_404(Profile, user=request.user)
+    return render(request, 'new_order.html', {'product':product, 'categories':categories, 'address':address.def_address})
 
 def make_order(request):
     product = get_object_or_404(Product, pk=request.POST['product_id'])
@@ -84,7 +86,7 @@ def make_order(request):
     amount = int(request.POST['amount'])
     price = product.price * amount
     inf_card = '242235523235'
-    Order.objects.create(product=product, user=user, pub_date=pub_date, amount=amount, price=price, inf_card=inf_card)
+    Order.objects.create(product=product, user=user, pub_date=pub_date, amount=amount, price=price, inf_card=inf_card, address=request.POST['address'], status=Status.objects.get(pk=1))
     return redirect("basket")
 
 def product(request, product_id):

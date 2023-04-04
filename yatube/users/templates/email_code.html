@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Подтверждение почты{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'product/css/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/signup.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+
+<div class="main-block" id="main-block">
+    <div class="container">
+        <h1></h1>
+        <h2>Код подтверждения был отправлен вам на почту</h2>
+        <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-fieldset ui-input __first">
+            <input name="code" type="text" class="username bottom-line">
+            <label for="username">
+                <span data-text="Username" class="username">Введите код<p class="username-error error"></p></span>
+            </label>
+        </fieldset>
+        <div class="form-footer">
+            <p class="username-error error">{{error}}</p>
+            <button class="btn-create">Отправить</button>
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

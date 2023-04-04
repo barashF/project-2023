@@ -61,8 +61,9 @@ class Order(models.Model):
     pub_date = models.DateTimeField("дата оформления заказа", auto_now_add=True)
     price = models.FloatField("общая цена заказа")
     amount = models.IntegerField("количество единиц товара", default=1)
-    status = models.ForeignKey(Status, on_delete=models.CASCADE, default=Status.objects.first().pk)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
     inf_card = models.CharField(max_length=151)
+    address = models.CharField(max_length=500)
 
 class ClientInf(models.Model):
     phone_number = PhoneNumberField()

@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from .models import Profile
 
 class UserRegistrationForm(UserCreationForm):
     class Meta:
@@ -42,3 +43,10 @@ class RegistrForm(UserCreationForm):
 class LoginForm(forms.Form):
     email = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+class ProfiledataForm(ModelForm):
+
+    class Meta:
+        model = Profile
+
+        fields = ('email', 'def_address')

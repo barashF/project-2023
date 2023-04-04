@@ -21,7 +21,7 @@
             </div></a>
             <p class="inf-order-block-text-price iob"><span id="price">{{product.price}}</span> ₽</p>
             <p class="inf-order-block-text-amount iob">количество единиц товара <input value="1" class="inf-order-block-text-amount-input" name="amount" type="number" id="input"></p>
-            <p class="inf-order-block-text-adress iob">адрес доставки</p>
+            <p class="inf-order-block-text-adress iob">адрес доставки <input type="text" value="{{address}}" id="address"></p>
             <hr class="line-2">
             <p class="inf-order-block-text-client iob">Контакты заказщика</p>
             <hr class="line-2">
@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="block-final-pay orders-block-pay">
-        <a href="{% url 'my_orders' %}"><button class="button-pay" id="{{product.id}}"><p class="button-text-pay" id="{{product.id}}">оплатить</p></button></a>
+        <a href="{% url 'my_orders' %}"><button class="button-pay clickb" id="{{product.id}}"><p class="button-text-pay clickb" id="{{product.id}}">оплатить</p></button></a>
         <div class="final-inf-order">
             <hr class="line-1">
             <p class="text-your-order">Ваш заказ</p>
@@ -41,11 +41,12 @@
     </div>
 </div>
 <script>
-    $('.button-pay').on('click', function(e){
+    $('.clickb').on('click', function(e){
         let amount = input.value
+        let address = document.getElementById('address').value
         let product_id = e.target.id
         console.log(product_id)
-        $.post("{% url 'make_order' %}", {'product_id':product_id, 'amount':amount, 'csrfmiddlewaretoken':"{{ csrf_token }}"});
+        $.post("{% url 'make_order' %}", {'product_id':product_id, 'amount':amount, 'address':address, 'csrfmiddlewaretoken':"{{ csrf_token }}"});
     })
     input.oninput = function() {
         var price = Number(document.getElementById('price').innerHTML)
