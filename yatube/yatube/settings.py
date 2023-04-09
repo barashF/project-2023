@@ -26,7 +26,7 @@ SECRET_KEY = '_(xva9_*2uqk+!#$^lbg#zle1_)dmecil=wnd5-!91(xtwgf+s'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "*",
+    "statusstack.pythonanywhere.com",
 ]
 
 
