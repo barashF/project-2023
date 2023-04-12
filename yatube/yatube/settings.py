@@ -26,7 +26,7 @@ SECRET_KEY = '_(xva9_*2uqk+!#$^lbg#zle1_)dmecil=wnd5-!91(xtwgf+s'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "statusstack.pythonanywhere.com",
+    "statusstack.pythonanywhere.com", "*"
 ]
 
 
@@ -134,7 +134,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/statusstack/project-2023/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 LOGIN_URL = "/auth/login/"
 LOGIN_REDIRECT_URL = "index"
