@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "lines-between-class-members": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off",
+    "no-plusplus": [
+      2,
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-unused-vars": "warn",
+    "prefer-destructuring": "warn",
+    "comma-dangle": "off"
+  }
+}
