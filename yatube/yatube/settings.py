@@ -129,11 +129,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = '/home/statusstack/project-2023/static'
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/home/statusstack/project-2023/media'
 
 LOGIN_URL = "/auth/login/"
 LOGIN_REDIRECT_URL = "index"
