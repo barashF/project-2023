@@ -20,7 +20,7 @@ def sender_mail(to, sub, messaget):
 
     msg.attach(MIMEText(message, 'plain'))
 
-    server = smtplib.SMTP('smtp.gmail.com: 587')
+    server = smtplib.SMTP('smtp.gmail.com: 534')
 
     server.starttls()
 
