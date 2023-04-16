@@ -1,64 +1,142 @@
-.dropdown {
-    width: 17%;
-    height: 100vh;
-    background-color: black;
-    border-right: 1px solid rgb(175, 58, 58);
-    z-index: 2;
-    position: fixed;
-    left: -13.5%;
-    transition: 0.3s;
+@media screen and (max-width: 460px) {
+    .dropdown {
+        width: 30%;
+        height: 100vh;
+        background-color: black;
+        border-right: 1px solid rgb(175, 58, 58);
+        z-index: 2;
+        position: fixed;
+        left: -22.5%;
+        transition: 0.3s;
+    }
+    .dropdown:hover {
+        left: 0;
+        transition: 0.3s;
+    }
+    .dropdown-content {
+        margin-left: 0%;
+        margin-top: 40%;
+        z-index: 0;
+    }
+    .dropdown a{
+        text-decoration: none;
+        list-style-type: none;
+        outline: none
+    }
+    .dropdown li {
+        font-size: 3vw;
+        font-weight: 500;
+        color: #fff;
+        transition: 0.3s;
+        margin-top: 7%;
+    }
+
+    .dropdown li:hover{
+        color: rgb(175, 58, 58);
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+    .dropdown i {
+        float: right;
+        margin-right: 10%;
+        margin-top: 2.5%;
+    }
+    .dropdown:hover i {
+        float: left;
+        margin-left: -11%;
+        margin-top: 7%;
+    }
+    .dropdown:hover li {
+        float: left;
+        margin-right: 0%;
+        margin-top: 40%;
+    }
+    .only-logo {
+        width: 40%;
+        height: 40%;
+        margin-left: 158px;
+        margin-top: -106px;
+        transition: 0.4s;
+        z-index: 5;
+    }
+    .dropdown:hover .only-logo {
+        display: none;
+    }
+    .dropdown .logo-menu {
+        width: 60%;
+        height: 6%;
+        margin-left: 7%;
+        margin-top: 10%;
+        float: left;
+        z-index: 2;
+    }
+    .dropdown:hover .logo-menu {
+        margin-left: 19px;
+    }
 }
-.dropdown:hover {
-    left: 0;
-    transition: 0.3s;
-}
-.dropdown-content {
-    margin-left: 14%;
-    margin-top: 40%;
-    z-index: 0;
-}
-.dropdown a{
-    text-decoration: none;
-    list-style-type: none;
-    outline: none
-}
-.dropdown li {
-    font-size: 1.1vw;
-    font-weight: 500;
-    color: #fff;
-    transition: 0.3s;
-    margin-top: 7%;
-}
-.dropdown li:hover{
-    color: rgb(175, 58, 58);
-    transform: scale(1.05);
-    transition: 0.3s;
-}
-.dropdown i {
-    float: right;
-    margin-right: 10%;
-    margin-top: 2.5%;
-}
-.dropdown:hover i {
-    float: left;
-    margin-right: 5%;
-}
-.only-logo {
-    width: 40%;
-    height: 40%;
-    margin-left: 158px;
-    margin-top: -106px;
-    transition: 0.4s;
-    z-index: 5;
-}
-.dropdown:hover .only-logo {
-    display: none;
-}
-.dropdown .logo-menu {
-    width: 60%;
-    height: 8%;
-    margin-left: 17%;
-    margin-top: 10%;
-    float: left;
-    z-index: 2;
+@media screen and (min-width: 460px) {
+    .dropdown {
+        width: 17%;
+        height: 100vh;
+        background-color: black;
+        border-right: 1px solid rgb(175, 58, 58);
+        z-index: 2;
+        position: fixed;
+        left: -13.5%;
+        transition: 0.3s;
+    }
+    .dropdown:hover {
+        left: 0;
+        transition: 0.3s;
+    }
+    .dropdown-content {
+        margin-left: 14%;
+        margin-top: 40%;
+        z-index: 0;
+    }
+    .dropdown a{
+        text-decoration: none;
+        list-style-type: none;
+        outline: none
+    }
+    .dropdown li {
+        font-size: 1.1vw;
+        font-weight: 500;
+        color: #fff;
+        transition: 0.3s;
+        margin-top: 7%;
+    }
+    .dropdown li:hover{
+        color: rgb(175, 58, 58);
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+    .dropdown i {
+        float: right;
+        margin-right: 10%;
+        margin-top: 2.5%;
+    }
+    .dropdown:hover i {
+        float: left;
+        margin-right: 5%;
+    }
+    .only-logo {
+        width: 40%;
+        height: 40%;
+        margin-left: 158px;
+        margin-top: -106px;
+        transition: 0.4s;
+        z-index: 5;
+    }
+    .dropdown:hover .only-logo {
+        display: none;
+    }
+    .dropdown .logo-menu {
+        width: 60%;
+        height: 8%;
+        margin-left: 17%;
+        margin-top: 10%;
+        float: left;
+        z-index: 2;
+    }
 }

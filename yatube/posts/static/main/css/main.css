@@ -1,5 +1,8 @@
+@media screen and (max-width: 460px) {
+  
+}
 body {
-    background: #2c2c2c;
+  background: #2c2c2c;
 }
 main .features {
     float: right;
@@ -33,14 +36,102 @@ main .features p {margin: 20px;}
 .gopost {
     background-color: rgba(28,28,28,0);
 }
-
-.catalog {
+@media screen and (max-width: 460px) {
+  .catalog {
+    width: 21%;
+    height: 75%;
+    margin-top: 0.8%;
+    margin-left: 10%;
+    font-size: 2.4vh;
+  }
+  .d7 {
+    top: 0;
+    margin-top: -10%;
+    width: auto;
+    margin-left: 35%;
+  }
+  .d7:after {content:""; clear:both; display:table}
+  .d7 form {
+    width: auto;
+    margin-left: auto;
+  }
+  
+  .d7 input {
+    width: 50%;
+    height: 70%;
+    padding-left: 15px;
+    border-radius: 42px;
+    border: 2px solid #324b4e;
+    background: #ffffff;
+    outline: none;
+    position: relative;
+    transition: .3s linear;
+  }
+  .d7 input:focus {
+    border: 0.4vh solid rgb(175, 58, 58);
+    width: 60%;
+  }
+  .d7 button {
+    width: 42px;
+    height: 42px;
+    background: none;
+    border: none;
+    position: absolute;
+  }
+  .d7 button:before{
+    content: "\f002";
+    font-family: FontAwesome;
+    color: #ffffff;
+  }
+}
+@media screen and (min-width: 500px){
+  .catalog {
     width: 6%;
     height: 75%;
     margin-top: 0.3%;
     margin-left: 5%;
     font-size: 2.4vh;
+  }
+  .d7 {
+      margin-top: -2.6%;
+      width: auto;
+      margin-left: 40%;
+    }
+    .d7:after {content:""; clear:both; display:table}
+    .d7 form {
+      width: auto;
+      margin-left: auto;
+    }
+    
+    .d7 input {
+      width: 35%;
+      height: 70%;
+      padding-left: 15px;
+      border-radius: 42px;
+      border: 2px solid #324b4e;
+      background: #ffffff;
+      outline: none;
+      position: relative;
+      transition: .3s linear;
+    }
+    .d7 input:focus {
+      border: 0.4vh solid rgb(175, 58, 58);
+      width: 45%;
+    }
+    .d7 button {
+      width: 42px;
+      height: 42px;
+      background: none;
+      border: none;
+      position: absolute;
+    }
+    .d7 button:before{
+      content: "\f002";
+      font-family: FontAwesome;
+      color: #ffffff;
+    }
 }
+
 
 .closeModal {
 	position: absolute;
@@ -74,44 +165,4 @@ main .features p {margin: 20px;}
 
 .closeModal::after {
 	transform: rotate(-45deg);
-}
-
-
-.d7 {
-  margin-top: -2.6%;
-  width: auto;
-  margin-left: 40%;
-}
-.d7:after {content:""; clear:both; display:table}
-.d7 form {
-  width: auto;
-  margin-left: auto;
-}
-
-.d7 input {
-  width: 35%;
-  height: 70%;
-  padding-left: 15px;
-  border-radius: 42px;
-  border: 2px solid #324b4e;
-  background: #ffffff;
-  outline: none;
-  position: relative;
-  transition: .3s linear;
-}
-.d7 input:focus {
-  border: 0.4vh solid rgb(175, 58, 58);
-  width: 45%;
-}
-.d7 button {
-  width: 42px;
-  height: 42px;
-  background: none;
-  border: none;
-  position: absolute;
-}
-.d7 button:before{
-  content: "\f002";
-  font-family: FontAwesome;
-  color: #ffffff;
 }
