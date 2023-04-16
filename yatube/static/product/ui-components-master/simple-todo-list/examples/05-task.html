@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Todo List on pure JavaScript</title>
+  <link rel="stylesheet" href="../css/simple-todo-list.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="js/05-simple-todo-list.js"></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #fff;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="todo">
+    <div class="todo__input">
+      <input class="todo__text" type="text">
+      <span class="todo__add"></span>
+    </div>
+    <select class="todo__options">
+      <option value="active">активные</option>
+      <option value="completed">завершённые</option>
+      <option value="deleted">удалённые</option>
+    </select>
+    <ul class="todo__items" data-todo-option="active"></ul>
+  </div>
+
+</body>
+
+</html>

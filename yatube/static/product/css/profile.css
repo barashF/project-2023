@@ -1,0 +1,119 @@
+.page-profile {
+    float: right;
+    margin-top: 100px;
+    margin-right: 60px;
+    width: 90%;
+}
+
+.block-client-inf-data {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-family: 'Nunito';
+    color: #fff;
+    font-size: 22px;
+    background-color: rgb(20, 20, 199);
+    border-radius: 12px;
+    padding-top: 6px;
+}
+.block-client-inf-img {
+    margin-left: 25px;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(27, 26, 26);
+    border-radius: 50%;
+}
+.block-client-inf {
+    float: left;
+    margin-left: 100px;
+    width: 200px;
+}
+.profile-username {
+    text-align: center;
+}
+.profile-username p {
+    font-size: 25px;
+    font-family: 'Nunito';
+    color: #fff;
+    margin-top: 5px;
+}
+.block-profile-inf {
+    float: left;
+    margin-left: 8%;
+    margin-top: 3%;
+    width: 60%;
+    height: 100%;
+}
+.block-profile-inf-first {
+    width: 100%;
+    height: 27%;
+}
+.block-profile-inf-first-str {
+    width: 25%;
+    height: 100%;
+    margin-left: 1%;
+    float: left;
+    background: #ffffff;
+    text-align: center;
+    border-radius: 1.1vh;
+}
+.text-disc-1 {
+    font-size: 3.5vh;
+    font-family: 'Nunito';
+    text-align: center;
+    font-weight: 650;
+    margin-top: 20%;
+}
+
+.text-disc-2 {
+    font-size: 3.5vh;
+    font-family: 'Nunito';
+    text-align: center;
+    font-weight: 650;
+}
+
+.block-profile-inf-my_cards {
+    width: 77%;
+    height: 23%;
+    margin-top: 1%;
+    margin-left: 1%;
+    background: #FFFFFF;
+    border-radius: 1.1vh;
+}
+.block-profile-inf-my_cards-text {
+    margin-top: 2.5%;
+    margin-left: 4%;
+    font-size: 3.4vh;
+    font-family: 'Nunito';
+    font-weight: 600;
+}
+.my_cards {
+    width: 100%;
+    height: 45%;
+    margin-left: 4vh;
+    margin-top: 4vh;
+}
+.my_cards-block-card {
+    box-sizing: border-box;
+    width: 17%;
+    height: 100%;
+    margin-left: 4.5%;
+    float: left;
+    background: #FFFFFF;
+    border: 0.35vh solid #000000;
+    border-radius: 10.882px;
+}
+.my_cards-block-card:hover {
+    border-color: rgb(196, 32, 32);
+}
+.img-card {
+    width: 96%;
+    height: 95%;
+    margin-left: 2%;
+    margin-top: 1.7%;
+    border-radius: 1vh;
+}
+
+a {
+    text-decoration: none;
+}

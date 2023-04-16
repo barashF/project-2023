@@ -1,0 +1,11 @@
+.alert-light {
+    float: left;
+    clear: both;
+    width: 80%;
+    margin: 100px 200px 20px 200px;
+    text-align: justify;
+}
+.footer-post {float: right;}
+.footer-post a {
+    text-decoration: none;
+}
