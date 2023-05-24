@@ -163,10 +163,10 @@ main .page-products {
 @media screen and (max-width: 460px) {
     .block-product-main:nth-child(n) {
         float: left;
-        width: 40%;
-        height: 30%;
-        margin-left: 7%;
-        margin-top: 10%;
+        width: 47%;
+        height: 39%;
+        margin-left: 2%;
+        margin-top: 2%;
         background: #FFFFFF;
         border-radius: 3.5%;
     }
@@ -187,7 +187,7 @@ main .page-products {
     
     .block-product-price {
         width: 95%;
-        height: 7%;
+        height: 5%;
         margin-left: 5%;
         margin-top: 2%;
         font-family: 'Kanit';
@@ -199,7 +199,7 @@ main .page-products {
     .block-product-name {
         width: 92%;
         height: 10%;
-        margin-top: 2%;
+        margin-top: 0%;
         margin-left: 6%;
         font-family: 'Nunito';
         font-style: normal;
@@ -215,7 +215,7 @@ main .page-products {
         width: 20%;
         height: 5%;
         margin-left: 0.5%;
-        margin-top: 0%;
+        margin-top: 7%;
         color: #FFF;
         font-family: 'Nunito';
         font-style: normal;
@@ -301,7 +301,7 @@ main .page-products {
         width: 20%;
         height: 5%;
         margin-left: 0.5%;
-        margin-top: 0%;
+        margin-top: 7%;
         color: #FFF;
         font-family: 'Nunito';
         font-style: normal;
